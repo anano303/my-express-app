@@ -1,0 +1,17 @@
+# Ignore environment variables
+.env
+# Node.js modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+.DS_Store
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# IDE specific files
+.vscode/
