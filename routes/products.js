@@ -1,18 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const Product = require("../models/Product"); // MongoDB მოდელი
+const Product = require("../models/Product");
 
 // Get all products
 router.get("/", async (req, res) => {
-  console.log("Received GET request for products"); // Log the request
+  console.log("Received GET request for products");
   try {
     const products = await Product.find();
-    console.log("Fetched Products:", products); // Log the fetched products
-    return res.json(products); // Return products as JSON
+    return res.json(products);
   } catch (err) {
-    console.error("Error fetching products:", err); // Log the error
     if (!res.headersSent) {
-      return res.status(500).send(err.message); // Send error message
+      return res.status(500).send(err.message);
     }
   }
 });
@@ -20,6 +18,9 @@ router.get("/", async (req, res) => {
 // Add a new product
 router.post("/", async (req, res) => {
   console.log("Request body for new product:", req.body); // Log the incoming request body
+  if (!req.body.name || !req.body.price) {
+    return res.status(400).json({ message: "Name and price are required." });
+  }
   const product = new Product({
     name: req.body.name,
     price: req.body.price,
@@ -29,10 +30,8 @@ router.post("/", async (req, res) => {
 
   try {
     const savedProduct = await product.save();
-    console.log("Saved Product:", savedProduct); // Log the saved product
     return res.status(201).json(savedProduct); // Return created product as JSON
   } catch (err) {
-    console.error("Error saving product:", err); // Log the error
     return res.status(400).send(err.message); // Return error message
   }
 });
@@ -45,36 +44,34 @@ router.put("/:id", async (req, res) => {
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       req.body,
-      { new: true, runValidators: true } // Return updated document and validate
+      { new: true, runValidators: true }
     );
 
     if (!updatedProduct) {
-      console.log("Product not found for ID:", req.params.id); // Log if product not found
+      console.log("Product not found for ID:", req.params.id);
       return res.status(404).send("Product not found");
     }
 
-    res.json(updatedProduct); // Return updated product
+    res.json(updatedProduct);
   } catch (err) {
-    console.error("Error updating product:", err); // Log the error
-    res.status(400).send(err.message); // Return error message
+    console.error("Error updating product:", err);
+    res.status(400).send(err.message);
   }
 });
 
 // Delete a product by ID
 router.delete("/:id", async (req, res) => {
-  console.log("Deleting product ID:", req.params.id); // Log the ID being deleted
+  console.log("Deleting product ID:", req.params.id);
   try {
     const deletedProduct = await Product.findByIdAndDelete(req.params.id);
 
     if (!deletedProduct) {
-      console.log("Product not found for ID:", req.params.id); // Log if product not found
       return res.status(404).send("Product not found");
     }
 
-    res.json({ message: "Product deleted successfully" }); // Return success message
+    res.json({ message: "Product deleted successfully" });
   } catch (err) {
-    console.error("Error deleting product:", err); // Log the error
-    res.status(500).send(err.message); // Return error message
+    res.status(500).send(err.message);
   }
 });
 
