@@ -27,12 +27,14 @@ This project is a basic implementation of a server-side application using Expres
 2. Navigate to the project directory:
 
 ```bash
-cd my-express-app```
+cd my-express-app
+```
 
 3. Install the dependencies:
 
 ```bash
-npm install```
+npm install
+```
 
 4. Start the development server:
 
