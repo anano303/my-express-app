@@ -20,9 +20,10 @@ This project is a basic implementation of a server-side application using Expres
 ## How to Run the Project Locally
 
 1. Clone the repository:
-   ```bash
+  
+```bash
    git clone https://github.com/anano303/my-express-app.git
-``````
+```
    
 2. Navigate to the project directory:
 
