@@ -27,25 +27,28 @@ This project is a basic implementation of a server-side application using Expres
 2. Navigate to the project directory:
 
 ```bash
-Copy code
-cd my-express-app
-Install the dependencies:
-```
-bash
-Copy code
-npm install
-Start the development server:
+cd my-express-app```
 
-bash
+3. Install the dependencies:
+
+```bash
+npm install```
+
+4. Start the development server:
+
+```bash
 Copy code
 npm start
+```
+
 Open your browser and go to http://localhost:3000 to view the application.
 
-Technologies Used
-Node.js: For server-side runtime.
-Express.js: For building server-side logic.
-JavaScript (ES6+): For writing modern, modular, and efficient code.
-Project Structure
+## Technologies Used
+**Node.js**: For server-side runtime.
+**Express.js**: For building server-side logic.
+**JavaScript (ES6+)**: For writing modern, modular, and efficient code.
+
+## Project Structure
 
 ```plaintext
 my-express-app/
