@@ -22,7 +22,7 @@ This project is a basic implementation of a server-side application using Expres
 1. Clone the repository:
    ```bash
    git clone https://github.com/anano303/my-express-app.git
-```
+``````
    
 2. Navigate to the project directory:
 
@@ -39,7 +39,6 @@ npm install
 4. Start the development server:
 
 ```bash
-Copy code
 npm start
 ```
 
