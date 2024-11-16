@@ -68,7 +68,7 @@ my-express-app/
 
 Feel free to reach out for collaborations or inquiries:
 
-- **Email**: your-email@example.com  
+- **Email**: Beroshviliani100@gmail.com 
 - **LinkedIn**: [Ani Beroshvili on LinkedIn](https://www.linkedin.com/in/ani-beroshvili-7a8998214)  
 - **GitHub**: [anano303](https://github.com/anano303)
 
